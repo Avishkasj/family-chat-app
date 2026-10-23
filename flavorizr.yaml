@@ -2,17 +2,17 @@ ide: vscode
 flavors:
   prod:
     app:
-      name: "Riverpod Architecture"
+      name: "FamNest"
 
     android:
-      applicationId: "ccom.example.flutter_clean_architecture"  
+      applicationId: "app.famnest.chat"  
     ios:
-      bundleId: "com.example.flutter_clean_architecture"
+      bundleId: "app.famnest.chat"
   dev:
     app:
-      name: "Riverpod Architecture Dev"
+      name: "FamNest Dev"
   
     android:
-      applicationId: "com.example.flutter_clean_architecture.dev"
+      applicationId: "app.famnest.chat.dev"
     ios:
-      bundleId: "com.example.flutter_clean_architecture.dev"
+      bundleId: "app.famnest.chat.dev"

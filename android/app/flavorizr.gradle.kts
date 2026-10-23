@@ -8,13 +8,13 @@ android.apply {
     productFlavors {
         create("prod") {
             dimension = "flavor-type"
-            applicationId = "ccom.example.flutter_clean_architecture"
-            resValue(type = "string", name = "app_name", value = "Riverpod Architecture")
+            applicationId = "app.famnest.chat"
+            resValue(type = "string", name = "app_name", value = "FamNest")
         }
         create("dev") {
             dimension = "flavor-type"
-            applicationId = "com.example.flutter_clean_architecture.dev"
-            resValue(type = "string", name = "app_name", value = "Riverpod Architecture Dev")
+            applicationId = "app.famnest.chat.dev"
+            resValue(type = "string", name = "app_name", value = "FamNest Dev")
         }
     }
 }

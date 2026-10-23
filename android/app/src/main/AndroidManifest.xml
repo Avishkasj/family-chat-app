@@ -1,5 +1,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application android:label="@string/app_name" android:name="${applicationName}" android:icon="@mipmap/ic_launcher">
+  <!-- Local Wi-Fi networking only: the app never talks to internet servers. -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <!-- Family hub / background connection -->
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <!-- App lock (fingerprint / face unlock) -->
+  <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+  <!-- Message notifications -->
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+  <!--
+    allowBackup / dataExtractionRules: chats, files and keys are never copied
+    to Google cloud backup or device-to-device transfer. Data stays on this device.
+    usesCleartextTraffic: the hub link is a plain local ws:// socket that carries
+    only FamNest's own authenticated AES-256-GCM encrypted frames.
+  -->
+  <application
+      android:label="@string/app_name"
+      android:name="${applicationName}"
+      android:icon="@mipmap/ic_launcher"
+      android:allowBackup="false"
+      android:fullBackupContent="false"
+      android:dataExtractionRules="@xml/data_extraction_rules"
+      android:usesCleartextTraffic="true">
     <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop" android:taskAffinity="" android:theme="@style/LaunchTheme" android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" android:hardwareAccelerated="true" android:windowSoftInputMode="adjustResize">
       <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
@@ -11,6 +39,17 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
+
+    <!-- Monochrome icon for the hub's ongoing notification. -->
+    <meta-data
+        android:name="app.famnest.chat.NOTIFICATION_ICON"
+        android:resource="@drawable/ic_stat_famnest"/>
+    <!-- Runs the family hub (or keeps a member connected) in the background. -->
+    <service
+        android:name="com.pravera.flutter_foreground_task.service.ForegroundService"
+        android:foregroundServiceType="remoteMessaging"
+        android:exported="false"/>
+
     <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
     <meta-data android:name="flutterEmbedding" android:value="2"/>
@@ -24,6 +63,11 @@
     <intent>
       <action android:name="android.intent.action.PROCESS_TEXT"/>
       <data android:mimeType="text/plain"/>
+    </intent>
+    <!-- Opening received files with other apps -->
+    <intent>
+      <action android:name="android.intent.action.VIEW"/>
+      <data android:mimeType="*/*"/>
     </intent>
   </queries>
 </manifest>

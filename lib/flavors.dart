@@ -1,7 +1,4 @@
-enum Flavor {
-  prod,
-  dev,
-}
+enum Flavor { prod, dev }
 
 class F {
   static late final Flavor appFlavor;
@@ -11,10 +8,9 @@ class F {
   static String get title {
     switch (appFlavor) {
       case Flavor.prod:
-        return 'Riverpod Architecture';
+        return 'FamNest';
       case Flavor.dev:
-        return 'Riverpod Architecture Dev';
+        return 'FamNest Dev';
     }
   }
-
 }

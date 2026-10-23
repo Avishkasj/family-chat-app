@@ -2,5 +2,5 @@
 #include "Generated.xcconfig"
 
 ASSET_PREFIX=dev
-BUNDLE_NAME=Riverpod Architecture Dev
-BUNDLE_DISPLAY_NAME=Riverpod Architecture Dev
+BUNDLE_NAME=FamNest Dev
+BUNDLE_DISPLAY_NAME=FamNest Dev

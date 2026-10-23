@@ -1,1 +1,8 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
 #include "Generated.xcconfig"
+
+// Builds without a flavor (Xcode's "Runner" scheme, `flutter build ios`)
+// are production builds: same name and icon as the "prod" flavor.
+ASSET_PREFIX=prod
+BUNDLE_NAME=FamNest
+BUNDLE_DISPLAY_NAME=FamNest

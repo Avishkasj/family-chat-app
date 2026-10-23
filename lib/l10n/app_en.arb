@@ -1,43 +1,343 @@
 {
   "@@locale": "en",
-  "products": "Products",
-  "@products": {
-    "description": "Title for products list screen"
-  },
-  "productDetail": "Product Detail",
-  "@productDetail": {
-    "description": "Title for product detail screen"
-  },
-  "cart": "Cart",
-  "@cart": {
-    "description": "Title for cart screen"
-  },
-  "addToCart": "Add to Cart",
-  "@addToCart": {
-    "description": "Button text to add product to cart"
-  },
-  "addedToCart": "Added to Cart",
-  "@addedToCart": {
-    "description": "Text shown when product is already in cart"
-  },
-  "yourCartIsEmpty": "Your cart is empty",
-  "@yourCartIsEmpty": {
-    "description": "Message shown when cart has no items"
-  },
-  "error": "Error: {message}",
-  "@error": {
-    "description": "Generic error message",
+  "appTitle": "FamNest",
+  "welcomeTitle": "Your family's private chat",
+  "welcomeBody": "Talk and share photos and files with your family over your home Wi-Fi. No internet, no accounts, no cloud — everything stays on your family's devices.",
+  "privacyPoint1": "End-to-end encrypted messages and files",
+  "privacyPoint2": "Works on home Wi-Fi without internet",
+  "privacyPoint3": "Stored only on your family's devices",
+  "createFamily": "Set up a new family",
+  "createFamilyHint": "Make this device the family hub",
+  "joinFamily": "Join my family",
+  "joinFamilyHint": "Someone at home already set up FamNest",
+  "yourName": "Your name",
+  "yourNameHint": "e.g. Mum, Dad, Nimal",
+  "nameRequired": "Please enter your name",
+  "familyName": "Family name",
+  "familyNameHint": "e.g. The Perera Family",
+  "familyNameRequired": "Please enter a family name",
+  "addPhoto": "Add photo",
+  "changePhoto": "Change photo",
+  "removePhoto": "Remove photo",
+  "takePhoto": "Take photo",
+  "chooseFromGallery": "Choose from gallery",
+  "createFamilyTitle": "Set up your family",
+  "createFamilyBody": "This device becomes your family's hub. Keep it at home, charging and on Wi-Fi — a spare phone or tablet works great.",
+  "createAction": "Create family",
+  "creating": "Setting up…",
+  "inviteTitle": "Invite your family",
+  "inviteBody": "On each family member's phone, install FamNest, tap \"Join my family\" and enter this invite code. They must be on the same Wi-Fi.",
+  "inviteCode": "Invite code",
+  "copy": "Copy",
+  "copied": "Copied",
+  "continueAction": "Continue",
+  "hubAddress": "Hub address: {address}",
+  "@hubAddress": {
     "placeholders": {
-      "message": {
+      "address": {
         "type": "String"
       }
     }
   },
-  "errorLoadingCart": "Error loading cart: {message}",
-  "@errorLoadingCart": {
-    "description": "Error message when cart fails to load",
+  "joinTitle": "Find your family",
+  "searching": "Searching your Wi-Fi for family hubs…",
+  "noHubsFound": "No family hub found. Make sure you're on the same Wi-Fi as the hub device and that FamNest is running on it.",
+  "scanAgain": "Search again",
+  "enterAddressManually": "Enter hub address manually",
+  "hubAddressLabel": "Hub IP address",
+  "hubAddressHint": "e.g. 192.168.1.20",
+  "connect": "Connect",
+  "couldNotReachHub": "Couldn't reach a family hub at that address.",
+  "joinFamilyNamed": "Join {family}",
+  "@joinFamilyNamed": {
     "placeholders": {
-      "message": {
+      "family": {
+        "type": "String"
+      }
+    }
+  },
+  "enterInviteCode": "Enter the invite code shown on the hub device (Settings → Family hub).",
+  "inviteCodeInvalid": "Invite codes have 16 letters and numbers",
+  "joinAction": "Join family",
+  "joining": "Joining…",
+  "wrongInviteCode": "That invite code isn't right. Check it on the hub device.",
+  "removedFromFamily": "This device was removed from the family.",
+  "joinFailed": "Couldn't connect to the family hub. Make sure you're on the same Wi-Fi.",
+  "chats": "Chats",
+  "family": "Family",
+  "settings": "Settings",
+  "noMessagesYet": "No messages yet",
+  "newChat": "New chat",
+  "newGroup": "New group",
+  "everyone": "Everyone in the family",
+  "noFamilyMembersYet": "No one else has joined yet. Share the invite code from the hub device.",
+  "connecting": "Connecting to your family hub…",
+  "searchingHub": "Looking for your family hub on this Wi-Fi…",
+  "offline": "Family hub not reachable. Messages will be sent when you're back on home Wi-Fi.",
+  "retry": "Retry",
+  "inviteCodeChanged": "The invite code was changed. Enter the new code to reconnect.",
+  "enterNewCode": "Enter code",
+  "removedBanner": "This device was removed from the family.",
+  "online": "Online",
+  "lastSeen": "Last seen {time}",
+  "@lastSeen": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "offlineStatus": "Offline",
+  "you": "You",
+  "typing": "typing…",
+  "typingOne": "{name} is typing…",
+  "@typingOne": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "typingMany": "Several people are typing…",
+  "membersCount": "{count, plural, =1{1 member} other{{count} members}}",
+  "@membersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "messageHint": "Message",
+  "attach": "Attach",
+  "send": "Send",
+  "attachPhoto": "Photos",
+  "attachCamera": "Camera",
+  "attachFile": "File",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "messageDeleted": "This message was deleted",
+  "deleteForEveryone": "Delete for everyone",
+  "deleteForMe": "Delete for me",
+  "copyText": "Copy text",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "save": "Save",
+  "openFile": "Open",
+  "fileFailed": "Download failed — tap to retry",
+  "couldNotOpenFile": "No app found to open this file",
+  "sending": "Sending…",
+  "failedToSend": "Not sent — tap to retry",
+  "fileTooLarge": "{name} is too large to send (max 200 MB)",
+  "@fileTooLarge": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notConnectedAction": "Connect to your family hub first",
+  "leftGroup": "You're no longer in this group",
+  "emptyChat": "Say hello 👋",
+  "groupInfo": "Group info",
+  "contactInfo": "Contact info",
+  "directEncrypted": "Messages here are end-to-end encrypted. Not even the family hub can read them.",
+  "groupName": "Group name",
+  "groupNameHint": "e.g. Weekend plans",
+  "groupNameRequired": "Please enter a group name",
+  "chooseMembers": "Choose members",
+  "createGroup": "Create",
+  "editGroup": "Edit group",
+  "leaveGroup": "Leave group",
+  "leaveGroupConfirm": "Leave this group? You won't receive its messages anymore.",
+  "mute": "Mute notifications",
+  "sharedMedia": "Photos & files",
+  "clearChat": "Clear chat on this device",
+  "clearChatConfirm": "Delete all messages in this chat from this device? Others keep their copies.",
+  "selectAtLeastOne": "Select at least one member",
+  "editProfile": "Edit profile",
+  "profileVisibility": "Your name and photo are shared only with your family, encrypted.",
+  "notificationsSetting": "Message notifications",
+  "keepConnected": "Stay connected in background",
+  "keepConnectedHint": "Shows a small ongoing notification so messages arrive instantly.",
+  "familyHub": "Family hub",
+  "hubRunning": "Running on this device",
+  "hubStopped": "Stopped",
+  "connectedTo": "Connected to {address}",
+  "@connectedTo": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+  "privacy": "Privacy & security",
+  "privacySummary": "How FamNest keeps your family's data private",
+  "privacyBody": "• No internet or cloud: messages travel only over your home Wi-Fi between your family's devices.\n\n• Everything you see is stored only on this device. Chats are excluded from cloud backups.\n\n• Joining requires the family invite code. Devices and the hub verify each other, and all traffic is encrypted (AES-256-GCM).\n\n• Messages, photos, files, names and profile photos are end-to-end encrypted. The hub stores only encrypted data it cannot read.\n\n• Direct chats use a key only the two of you share, so other family members can't read them either.\n\n• Removing a member and issuing a new invite code locks them out.",
+  "deviceId": "Device fingerprint",
+  "version": "Version {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "leaveFamily": "Leave family & erase data",
+  "leaveFamilyConfirm": "This permanently deletes all messages, photos, files and keys from this device. If this device is the family hub, the hub and its history are deleted too and everyone will need to set up again.",
+  "erase": "Erase",
+  "hubOnlineCount": "{online} of {total} members online",
+  "@hubOnlineCount": {
+    "placeholders": {
+      "online": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "rotateCode": "Issue new invite code",
+  "rotateCodeHint": "Use after removing someone",
+  "rotateCodeConfirm": "Everyone will be disconnected and must enter the new code once. Old codes stop working.",
+  "removeMember": "Remove from family",
+  "removeMemberConfirm": "Remove {name} from the family? Their device will be disconnected. Issue a new invite code afterwards so it can't rejoin.",
+  "@removeMemberConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "startHub": "Start",
+  "stopHub": "Stop hub",
+  "stopHubConfirm": "While the hub is stopped, nobody in the family can send or receive messages.",
+  "hubTips": "Keep this device plugged in and on home Wi-Fi. The hub keeps running in the background and starts again after a restart.",
+  "hubIosNote": "On iPhone and iPad the hub only runs while FamNest is open. For an always-on hub, use an Android device or a home computer.",
+  "batteryOptimization": "Allow running in background",
+  "batteryOptimizationHint": "Stops Android from pausing the hub to save battery",
+  "renameFamily": "Rename family",
+  "hubError": "Couldn't start the family hub: {error}",
+  "@hubError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "somethingWentWrong": "Something went wrong: {error}",
+  "@somethingWentWrong": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "familyActions": "Family actions",
+  "poll": "Poll",
+  "callFamily": "Call the family",
+  "callFamilyHint": "Everyone gets a notification and can answer with one tap.",
+  "callBreakfast": "Breakfast is ready!",
+  "callLunch": "Lunch is ready!",
+  "callTea": "Tea time!",
+  "callDinner": "Dinner is ready!",
+  "callReady": "It's ready — come and get it!",
+  "callComeHere": "Everyone, please come here",
+  "callCustom": "Family call",
+  "customCall": "Custom call…",
+  "customCallHint": "e.g. Leaving for the temple in 10 minutes",
+  "answerComing": "On my way",
+  "answerSoon": "In 5 minutes",
+  "answerSkip": "Can't come",
+  "waitingForReplies": "Waiting for replies…",
+  "createPoll": "Create a poll",
+  "createPollHint": "Let the family vote",
+  "pollQuestion": "Question",
+  "pollQuestionHint": "e.g. What should we cook on Sunday?",
+  "pollOption": "Option {number}",
+  "@pollOption": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "addOption": "Add option",
+  "allowMultiple": "Allow multiple answers",
+  "sendPoll": "Send poll",
+  "pollClosed": "Poll closed",
+  "pollChooseOne": "Choose one",
+  "pollChooseMany": "Choose one or more",
+  "votesCount": "{count, plural, =0{No votes yet} =1{1 vote} other{{count} votes}}",
+  "@votesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "closePoll": "Close poll",
+  "familyMember": "Family member",
+  "notificationChannelMessages": "Messages",
+  "notificationChannelCalls": "Family calls",
+  "notificationChannelCallsHint": "Meal times and \"come here\" calls from your family",
+  "notificationNewPoll": "New poll from {name}",
+  "@notificationNewPoll": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationCallFrom": "{name} is calling the family",
+  "@notificationCallFrom": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "security": "Security",
+  "appLock": "App lock",
+  "appLockSubtitle": "Require {method} to open FamNest",
+  "@appLockSubtitle": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "appLockUnavailable": "Set up Face ID, Touch ID or a passcode on this device first",
+  "appLockNotEnabled": "App lock was not turned on",
+  "lockWhen": "Lock",
+  "lockImmediately": "Immediately after leaving",
+  "lockAfterOneMinute": "After 1 minute",
+  "lockAfterFifteenMinutes": "After 15 minutes",
+  "lockedTitle": "FamNest is locked",
+  "lockedBody": "Your family chats are protected.",
+  "unlockWith": "Unlock with {method}",
+  "@unlockWith": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "unlockReason": "Unlock FamNest",
+  "enableLockReason": "Confirm to turn on app lock",
+  "disableLockReason": "Confirm to turn off app lock",
+  "eraseReason": "Confirm to erase all FamNest data",
+  "faceId": "Face ID",
+  "touchId": "Touch ID",
+  "faceUnlock": "Face unlock",
+  "fingerprint": "Fingerprint",
+  "biometrics": "Biometrics",
+  "devicePasscode": "Device passcode",
+  "splashTagline": "Private family chat",
+  "splashFooter": "End-to-end encrypted · Works without internet",
+  "startupFailed": "FamNest could not start: {error}",
+  "@startupFailed": {
+    "placeholders": {
+      "error": {
         "type": "String"
       }
     }
